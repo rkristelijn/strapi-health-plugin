@@ -1,5 +1,5 @@
 {
-  "name": "health",
+  "name": "strapi-health-plugin",
   "version": "0.0.0",
   "description": "A Strapi plugin for supporting Kubernetes health checks",
   "strapi": {
