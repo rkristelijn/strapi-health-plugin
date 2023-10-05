@@ -19,7 +19,7 @@ After installation, go to http://localhost:1337/health:
 In your strapi project run:
 
 ```sh
-npm install @rkristelijn/strapi-health-plugin
+npm install strapi-health-plugin
 ```
 
 To apply the plugin to Strapi run re-build command
