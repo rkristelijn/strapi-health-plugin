@@ -32,5 +32,15 @@
   "engines": {
     "node": ">=16.0.0 <=20.x.x",
     "npm": ">=6.0.0"
-  }
+  },
+  "gitRepository": "https://github.com/rkristelijn/strapi-health-plugin.git",
+  "keywords": [
+    "strapi",
+    "Kubernetes",
+    "health",
+    "healthcheck",
+    "health-check",
+    "health endpoint"
+  ],
+  "license": "MIT"
 }
