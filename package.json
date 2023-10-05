@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A Strapi plugin for supporting Kubernetes health checks",
   "strapi": {
-    "name": "Health",
+    "name": "health",
     "description": "A simple health endpoint",
     "kind": "plugin"
   },
