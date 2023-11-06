@@ -17,6 +17,9 @@
     "@types/node": "^20.8.2",
     "typescript": "5.0.4"
   },
+  "peerDependencies": {
+    "@strapi/strapi": "^4.4.0"
+  },
   "scripts": {
     "develop": "tsc -p tsconfig.server.json -w",
     "build": "tsc -p tsconfig.server.json"
