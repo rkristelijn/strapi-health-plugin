@@ -1,6 +1,6 @@
 {
   "name": "strapi-health-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Strapi plugin for supporting Kubernetes health checks",
   "strapi": {
     "name": "health",
