@@ -1,6 +1,6 @@
 {
   "name": "strapi-health-plugin",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A Strapi plugin for supporting Kubernetes health checks",
   "strapi": {
     "name": "health",
@@ -18,7 +18,7 @@
     "typescript": "5.0.4"
   },
   "peerDependencies": {
-    "@strapi/strapi": "^4.4.0"
+    "@strapi/strapi": ">=4.4.0 <6.0.0"
   },
   "scripts": {
     "develop": "tsc -p tsconfig.server.json -w",
@@ -33,7 +33,7 @@
     }
   ],
   "engines": {
-    "node": ">=16.0.0 <=20.x.x",
+    "node": ">=16.0.0 <=22.x.x",
     "npm": ">=6.0.0"
   },
   "gitRepository": "https://github.com/rkristelijn/strapi-health-plugin.git",
