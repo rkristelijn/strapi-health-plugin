@@ -45,5 +45,9 @@
     "health-check",
     "health endpoint"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rkristelijn/strapi-health-plugin.git"
+  }
 }
