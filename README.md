@@ -27,3 +27,7 @@ To apply the plugin to Strapi run re-build command
 ```sh
 strapi build
 ```
+
+## Sponsor me
+
+[Sponsor me](https://github.com/sponsors/rkristelijn/) if you appreciate my work.
