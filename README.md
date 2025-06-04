@@ -2,6 +2,8 @@
 
 A quick description of health with minimal plugin. It is written in JS and not TS as it doesn't pick up ts files without compiling.
 
+> You are on a beta branch
+
 ## Demonstration
 
 After installation, go to http://localhost:1337/health:
