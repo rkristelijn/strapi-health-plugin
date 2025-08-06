@@ -1,5 +1,7 @@
 # Strapi plugin health
 
+[![npm](https://img.shields.io/npm/dm/strapi-health-plugin)](https://www.npmjs.com/package/strapi-health-plugin)
+
 A quick description of health with minimal plugin. It is written in JS and not TS as it doesn't pick up ts files without compiling.
 
 ## Demonstration
