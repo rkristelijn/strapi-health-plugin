@@ -1,7 +1,7 @@
 # Strapi plugin health
 
 [![npm](https://img.shields.io/npm/dm/strapi-health-plugin)](https://www.npmjs.com/package/strapi-health-plugin)
-![version](https://img.shields.io/npm/v/strapi-health-plugin)
+[![version](https://img.shields.io/npm/v/strapi-health-plugin?label=package)](https://www.npmjs.com/package/strapi-health-plugin)
 ![license](https://img.shields.io/npm/l/strapi-health-plugin)
 ![npm total downloads](https://img.shields.io/npm/dt/strapi-health-plugin)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
