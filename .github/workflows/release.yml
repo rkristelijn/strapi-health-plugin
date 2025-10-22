@@ -24,10 +24,22 @@ jobs:
       - run: npm test
       
       - name: Create Release Pull Request or Publish
+        id: changesets
         uses: changesets/action@v1
         with:
           publish: npm run release:publish
           version: npm run version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
+      - name: Publish to NPM (if no changesets)
+        if: steps.changesets.outputs.published != 'true'
+        run: |
+          if npm view strapi-health-plugin@$(node -p "require('./package.json').version") > /dev/null 2>&1; then
+            echo "Version already published, skipping"
+          else
+            npm publish
+          fi
+        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
