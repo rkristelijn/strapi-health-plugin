@@ -28,6 +28,11 @@ jobs:
       
       - run: npm ci
       
+      - name: Configure git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      
       - name: Bump version
         run: npm version ${{ github.event.inputs.version_type }}
       
