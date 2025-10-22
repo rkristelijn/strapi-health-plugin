@@ -25,6 +25,7 @@
     "build": "tsc -p tsconfig.server.json",
     "test": "echo \"No tests yet\" && exit 0",
     "changeset": "changeset",
+    "version": "changeset version",
     "release:publish": "changeset publish",
     "prepublishOnly": "npm run build"
   },
