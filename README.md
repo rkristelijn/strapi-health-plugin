@@ -109,12 +109,11 @@ Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTIN
 
 ### Releases
 
-This project uses [Changesets](https://github.com/changesets/changesets) for automated releases:
+This project uses manual releases via GitHub Actions workflows. Only maintainers can trigger releases:
 
-```bash
-npm run changeset  # Add changeset after changes
-git push           # Triggers release PR
-```
+1. **Bump Version**: Go to Actions → "Bump Version" → Run workflow (select patch/minor/major)
+2. **Publish Package**: Go to Actions → "Publish Package" → Run workflow
+3. **Manual Release**: Go to Actions → "Manual Release" → Run workflow (does both steps)
 
 ## Security
 
