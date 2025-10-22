@@ -1,4 +1,4 @@
-# Strapi plugin health
+# Strapi Health Plugin
 
 [![npm](https://img.shields.io/npm/dm/strapi-health-plugin)](https://www.npmjs.com/package/strapi-health-plugin)
 [![version](https://img.shields.io/npm/v/strapi-health-plugin?label=package)](https://www.npmjs.com/package/strapi-health-plugin)
@@ -8,11 +8,39 @@
 ![GitHub stars](https://img.shields.io/github/stars/rkristelijn/strapi-health-plugin)
 ![Last Commit](https://img.shields.io/github/last-commit/rkristelijn/strapi-health-plugin)
 
-A quick description of health with minimal plugin. It is written in JS and not TS as it doesn't pick up ts files without compiling.
+A lightweight Strapi plugin that provides health check endpoints for monitoring and Kubernetes readiness/liveness probes.
 
-## Demonstration
+## Features
 
-After installation, go to http://localhost:1337/health:
+- ✅ Simple health endpoint at `/health`
+- ✅ Returns uptime, status, and timestamp
+- ✅ Perfect for Kubernetes readiness/liveness probes
+- ✅ Zero configuration required
+- ✅ Minimal performance impact
+
+## Installation
+
+```bash
+npm install strapi-health-plugin
+```
+
+After installation, rebuild your Strapi application:
+
+```bash
+npm run build
+# or
+strapi build
+```
+
+## Usage
+
+Once installed, the plugin automatically exposes a health endpoint at:
+
+```
+GET /health
+```
+
+### Response Format
 
 ```json
 {
@@ -22,20 +50,86 @@ After installation, go to http://localhost:1337/health:
 }
 ```
 
-## Installation
+- `uptime`: Process uptime in seconds
+- `message`: Status message ("OK" when healthy)
+- `timestamp`: Current timestamp in milliseconds
 
-In your strapi project run:
+## Kubernetes Configuration
 
-```sh
-npm install strapi-health-plugin
+### Readiness Probe
+
+```yaml
+readinessProbe:
+  httpGet:
+    path: /health
+    port: 1337
+  initialDelaySeconds: 30
+  periodSeconds: 10
 ```
 
-To apply the plugin to Strapi run re-build command
+### Liveness Probe
 
-```sh
-strapi build
+```yaml
+livenessProbe:
+  httpGet:
+    path: /health
+    port: 1337
+  initialDelaySeconds: 60
+  periodSeconds: 30
 ```
 
-## Sponsor me
+## Docker Health Check
 
-[Sponsor me](https://github.com/sponsors/rkristelijn/) if you appreciate my work.
+```dockerfile
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:1337/health || exit 1
+```
+
+## Troubleshooting
+
+### Plugin Not Loading
+
+1. Ensure you've run `npm run build` after installation
+2. Check that the plugin is listed in your `package.json` dependencies
+3. Restart your Strapi application
+
+### Endpoint Not Accessible
+
+1. Verify your Strapi server is running
+2. Check if custom middleware is blocking the endpoint
+3. Ensure no conflicting routes exist
+
+### Permission Issues
+
+The health endpoint is publicly accessible by default. If you need to restrict access, you can modify the route configuration in your Strapi application.
+
+## Contributing
+
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting PRs.
+
+### Releases
+
+This project uses [Changesets](https://github.com/changesets/changesets) for automated releases:
+
+```bash
+npm run changeset  # Add changeset after changes
+git push           # Triggers release PR
+```
+
+## Security
+
+For security concerns, please see our [Security Policy](SECURITY.md).
+
+## License
+
+MIT © [Remi Kristelijn](https://github.com/rkristelijn)
+
+## Support
+
+- 🐛 [Report bugs](https://github.com/rkristelijn/strapi-health-plugin/issues)
+- 💡 [Request features](https://github.com/rkristelijn/strapi-health-plugin/issues)
+- 💖 [Sponsor the project](https://github.com/sponsors/rkristelijn/)
+
+---
+
+**Made with ❤️ for the Strapi community**
